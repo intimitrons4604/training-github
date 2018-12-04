@@ -38,13 +38,13 @@ def check_differences():
 
             a = int(match.group(1))
             b = int(match.group(2))
-            expected_difference = int(match.group(3))
+            file_difference = int(match.group(3))
 
-            file_difference = a - b
+            actual_difference = a - b
 
-            if file_difference != expected_difference:
+            if actual_difference != file_difference:
                 print("%s:%d Incorrect difference. File=%d Actual=%d" %
-                      (DIFFERENCE_FILE_NAME, line_number, expected_difference, file_difference))
+                      (DIFFERENCE_FILE_NAME, line_number, file_difference, actual_difference))
                 okay = False
                 bad_lines = bad_lines + 1
                 continue
