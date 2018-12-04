@@ -7,4 +7,4 @@ install: true
 
 before_script: cd ${TRAVIS_BUILD_DIR}
 
-script: check.py
+script: python check.py
